@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Kanban - Sistema de Mantenimiento</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">🚛 Sistema de Mantenimiento</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html">Panel Principal</a></li>
+                <li><a href="login.html">🔐 Gestión de Equipos</a></li>
+                <li><a href="kanban.html" class="active">📋 Vista Kanban</a></li>
+                <li><a href="#" id="exportExcel">📊 Exportar Excel</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="page-header">
+            <h2>📋 Vista Kanban de Mantenimiento</h2>
+            <p class="subtitle">Seguimiento visual de solicitudes y trabajos</p>
+        </section>
+
+        <!-- Filtros de Kanban -->
+        <section class="kanban-filters">
+            <div class="filter-group">
+                <label for="kanbanType">Tipo de Vista:</label>
+                <select id="kanbanType">
+                    <option value="maintenance">Mantenimientos</option>
+                    <option value="equipment">Por Equipo</option>
+                </select>
+            </div>
+            <div class="filter-group" id="equipmentFilterGroup" style="display: none;">
+                <label for="equipmentFilter">Seleccionar Equipo:</label>
+                <select id="equipmentFilter">
+                    <option value="all">Todos los equipos</option>
+                    <!-- Se llenará dinámicamente -->
+                </select>
+            </div>
+            <button class="btn btn-primary btn-sm" onclick="refreshKanban()">🔄 Actualizar</button>
+        </section>
+
+        <!-- Tablero Kanban -->
+        <section class="kanban-board">
+            <!-- Vista de Mantenimientos -->
+            <div id="maintenanceKanban" class="kanban-container">
+                <div class="kanban-column">
+                    <div class="kanban-column-header pending">
+                        <h3>📝 Reportado</h3>
+                        <span class="kanban-count" id="countReported">0</span>
+                    </div>
+                    <div class="kanban-column-body" id="columnReported">
+                        <!-- Tarjetas de solicitudes reportadas -->
+                    </div>
+                </div>
+
+                <div class="kanban-column">
+                    <div class="kanban-column-header in-progress">
+                        <h3>🔧 En Proceso</h3>
+                        <span class="kanban-count" id="countInProgress">0</span>
+                    </div>
+                    <div class="kanban-column-body" id="columnInProgress">
+                        <!-- Tarjetas en proceso -->
+                    </div>
+                </div>
+
+                <div class="kanban-column">
+                    <div class="kanban-column-header waiting">
+                        <h3>⏳ Esperando Repuestos</h3>
+                        <span class="kanban-count" id="countWaiting">0</span>
+                    </div>
+                    <div class="kanban-column-body" id="columnWaiting">
+                        <!-- Tarjetas esperando repuestos -->
+                    </div>
+                </div>
+
+                <div class="kanban-column">
+                    <div class="kanban-column-header completed">
+                        <h3>✅ Completado</h3>
+                        <span class="kanban-count" id="countCompleted">0</span>
+                    </div>
+                    <div class="kanban-column-body" id="columnCompleted">
+                        <!-- Tarjetas completadas -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vista por Equipo -->
+            <div id="equipmentKanban" class="kanban-container" style="display: none;">
+                <div class="equipment-kanban-view">
+                    <div id="equipmentKanbanContent">
+                        <!-- Se llenará dinámicamente con el historial del equipo -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Estadísticas Rápidas -->
+        <section class="kanban-stats">
+            <div class="stat-card">
+                <h4>Total Solicitudes</h4>
+                <p class="stat-number" id="totalRequests">0</p>
+            </div>
+            <div class="stat-card">
+                <h4>Tiempo Promedio</h4>
+                <p class="stat-number" id="avgTime">-- días</p>
+            </div>
+            <div class="stat-card">
+                <h4>Equipos Atendidos</h4>
+                <p class="stat-number" id="equipmentServiced">0</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Sistema de Mantenimiento de Flota - Barinas</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="kanban.js"></script>
+</body>
+</html>

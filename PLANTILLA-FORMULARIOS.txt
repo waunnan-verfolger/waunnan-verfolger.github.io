@@ -1,0 +1,536 @@
+<!-- 
+    PLANTILLA DE EJEMPLO PARA GOOGLE FORMS
+    
+    Copia esta estructura al crear tus formularios en Google Forms
+    IMPORTANTE: Se requieren 3 formularios distintos
+-->
+
+==============================================
+FORMULARIO 1: REPORTE DE DAÑO / NECESIDAD DE MANTENIMIENTO
+==============================================
+
+Título: Reporte de Daño o Necesidad de Mantenimiento - Sistema Barinas
+
+Descripción:
+Use este formulario para reportar cualquier daño encontrado o necesidad de mantenimiento en los equipos de la flota.
+
+Campos:
+
+1. Nombre del Equipo *
+   Tipo: Respuesta corta
+   Descripción: Ej: Camión Volqueta 1
+
+2. Referencia/Placa *
+   Tipo: Respuesta corta
+   Descripción: Ej: ABC-123
+
+3. Ubicación Actual del Equipo *
+   Tipo: Respuesta corta
+   Descripción: Ej: Planta Principal, Zona Norte, Obra El Bosque, etc.
+
+4. Tipo de Problema *
+   Tipo: Opción múltiple
+   Opciones:
+   - Daño mecánico
+   - Daño eléctrico
+   - Daño hidráulico
+   - Desgaste normal
+   - Fuga (aceite, combustible, refrigerante)
+   - Problema de frenos
+   - Problema de motor
+   - Problema de transmisión
+   - Neumáticos
+   - Otro
+
+5. Descripción del Problema *
+   Tipo: Párrafo
+   Descripción: Describa detalladamente qué problema presenta el equipo
+
+6. Gravedad del Problema *
+   Tipo: Opción múltiple
+   Opciones:
+   - Urgente (equipo detenido, peligro inmediato)
+   - Alta (requiere atención pronto)
+   - Media (puede esperar algunos días)
+   - Baja (mantenimiento preventivo)
+
+7. ¿El equipo está operativo? *
+   Tipo: Opción múltiple
+   Opciones:
+   - Sí, totalmente operativo
+   - Parcialmente operativo (con limitaciones)
+   - No, fuera de servicio
+
+8. Evidencia Fotográfica *
+   Tipo: Subir archivos
+   Descripción: Suba 1-3 fotos que muestren el problema
+   Configuración: Permitir tipos de archivo (imágenes)
+
+9. Kilometraje/Horas Actuales
+   Tipo: Respuesta corta
+   Descripción: Lectura actual del odómetro
+
+10. ¿Se requieren repuestos inmediatos?
+    Tipo: Opción múltiple
+    Opciones:
+    - Sí
+    - No
+    - No estoy seguro
+
+11. Repuestos que cree que se necesitan
+    Tipo: Párrafo
+    Descripción: Si conoce qué repuestos se necesitan, descríbalos aquí
+
+12. Reportado por *
+    Tipo: Respuesta corta
+    Descripción: Nombre completo de quien reporta
+
+13. Cargo
+    Tipo: Respuesta corta
+    Descripción: Ej: Operador, Supervisor, Mecánico
+
+14. Teléfono de Contacto *
+    Tipo: Respuesta corta
+    Descripción: Para seguimiento
+
+15. Fecha y Hora del Reporte *
+    Tipo: Fecha y hora
+    Valor predeterminado: Fecha y hora actual
+
+16. Observaciones Adicionales
+    Tipo: Párrafo
+    Descripción: Cualquier información adicional relevante
+
+==============================================
+FORMULARIO 2: REPORTE DE MANTENIMIENTO REALIZADO
+==============================================
+
+Título: Reporte de Mantenimiento Realizado - Sistema Barinas
+
+Descripción:
+Complete este formulario después de realizar cualquier trabajo de mantenimiento en los equipos.
+
+Campos:
+
+1. Nombre del Equipo *
+   Tipo: Respuesta corta
+   Descripción: Ej: Camión Volqueta 1
+
+2. Referencia/Placa *
+   Tipo: Respuesta corta
+   Descripción: Ej: ABC-123
+
+3. Ubicación donde se realizó el Trabajo *
+   Tipo: Respuesta corta
+   Descripción: Ej: Taller Central, En sitio - Zona Norte, etc.
+
+4. Tipo de Mantenimiento *
+   Tipo: Opción múltiple
+   Opciones:
+   - Preventivo (programado)
+   - Correctivo (reparación)
+   - De emergencia
+   - Inspección
+
+5. Trabajo Realizado *
+   Tipo: Párrafo
+   Descripción: Describa detalladamente todo el trabajo que se realizó
+
+6. Repuestos Utilizados
+   Tipo: Párrafo
+   Descripción: Liste todos los repuestos usados con cantidades
+   Ej: - Filtro de aceite x1
+        - Aceite SAE 15W40 x4 galones
+        - Filtro de combustible x1
+
+7. Herramientas o Equipos Especiales Utilizados
+   Tipo: Párrafo
+   Descripción: Si se requirieron herramientas especiales, indíquelas aquí
+
+8. Evidencia Fotográfica del Trabajo *
+   Tipo: Subir archivos
+   Descripción: Suba 2-4 fotos del trabajo realizado (antes/después)
+   Configuración: Permitir tipos de archivo (imágenes)
+
+9. Kilometraje/Horas al momento del Servicio *
+   Tipo: Respuesta corta
+   Descripción: Lectura del odómetro al momento del servicio
+
+10. ¿Se encontraron otros problemas durante el trabajo?
+    Tipo: Párrafo
+    Descripción: Anote cualquier otro problema observado que requiera atención
+
+11. Estado Final del Equipo *
+    Tipo: Opción múltiple
+    Opciones:
+    - Operativo - Listo para usar
+    - Operativo con observaciones
+    - Requiere seguimiento en X días
+    - Requiere trabajo adicional
+    - Fuera de servicio
+
+12. Próximo Mantenimiento Recomendado
+    Tipo: Respuesta corta
+    Descripción: Ej: En 5,000 km, En 250 horas, En 3 meses
+
+13. Horas de Trabajo Empleadas *
+    Tipo: Respuesta corta
+    Descripción: Tiempo total empleado en el trabajo
+
+14. Técnico Responsable *
+    Tipo: Respuesta corta
+    Descripción: Nombre completo de quien realizó el trabajo
+
+15. Técnicos Asistentes
+    Tipo: Respuesta corta
+    Descripción: Nombres de otros técnicos que participaron
+
+16. Fecha del Servicio *
+    Tipo: Fecha
+    Descripción: Fecha en que se realizó el mantenimiento
+
+17. Costo Estimado de Repuestos
+    Tipo: Respuesta corta
+    Descripción: Valor aproximado de los repuestos utilizados (opcional)
+
+18. Observaciones y Recomendaciones
+    Tipo: Párrafo
+    Descripción: Comentarios generales y recomendaciones para el equipo
+
+19. Firma del Técnico (Opcional)
+    Tipo: Subir archivos
+    Descripción: Puede subir una imagen de su firma o del documento firmado
+
+==============================================
+FORMULARIO 3: SOLICITUD DE REPUESTOS
+==============================================
+
+Título: Solicitud de Repuestos - Sistema Barinas
+
+Descripción:
+Use este formulario para solicitar repuestos para los equipos de la flota.
+
+Campos:
+
+1. Nombre del Equipo *
+   Tipo: Respuesta corta
+   Descripción: Ej: Camión Volqueta 1
+
+2. Referencia/Placa *
+   Tipo: Respuesta corta
+   Descripción: Ej: ABC-123
+
+3. Repuestos Solicitados *
+   Tipo: Párrafo
+   Descripción: Liste los repuestos necesarios con especificaciones completas
+   Ej: - Filtro de aceite marca X, referencia ABC-123
+        - Pastillas de freno delanteras para XYZ
+        - Aceite hidráulico ISO 68 x 20 litros
+
+4. Cantidad de Cada Repuesto *
+   Tipo: Párrafo
+   Descripción: Indique claramente la cantidad de cada item
+   (o inclúyalo en el campo anterior)
+
+5. Nivel de Urgencia *
+   Tipo: Opción múltiple
+   Opciones:
+   - Urgente - Equipo detenido (necesario YA)
+   - Alta - Necesario esta semana
+   - Media - Necesario en 1-2 semanas
+   - Baja - Puede esperar más de 2 semanas
+
+6. Motivo de la Solicitud *
+   Tipo: Párrafo
+   Descripción: Explique por qué se necesitan estos repuestos
+
+7. ¿El equipo está operativo actualmente? *
+   Tipo: Opción múltiple
+   Opciones:
+   - Sí, totalmente operativo
+   - Parcialmente operativo
+   - No, fuera de servicio esperando repuestos
+
+8. Foto del Repuesto o Problema
+   Tipo: Subir archivos
+   Descripción: Si es posible, suba foto del repuesto dañado o del problema
+   Configuración: Permitir tipos de archivo (imágenes)
+
+9. Especificaciones Técnicas
+   Tipo: Párrafo
+   Descripción: Números de parte originales, medidas, marcas específicas, etc.
+   Ej: OEM Part #: 12345-ABC-678
+
+10. Proveedor Sugerido
+    Tipo: Respuesta corta
+    Descripción: Si conoce un proveedor, indíquelo aquí
+
+11. Presupuesto Estimado
+    Tipo: Respuesta corta
+    Descripción: Costo aproximado total (si lo conoce)
+
+12. Número de Orden o Referencia de Trabajo
+    Tipo: Respuesta corta
+    Descripción: Si aplica, número de orden de trabajo relacionada
+
+13. Solicitante *
+    Tipo: Respuesta corta
+    Descripción: Nombre completo de quien solicita
+
+14. Cargo del Solicitante *
+    Tipo: Respuesta corta
+    Descripción: Ej: Supervisor de Mantenimiento, Mecánico, Operador
+
+15. Teléfono de Contacto *
+    Tipo: Respuesta corta
+    Descripción: Para seguimiento de la solicitud
+
+16. Email de Contacto
+    Tipo: Respuesta corta
+    Descripción: Correo electrónico para notificaciones
+
+17. Fecha de Solicitud *
+    Tipo: Fecha
+    Valor predeterminado: Fecha actual
+
+18. Fecha Límite Necesaria
+    Tipo: Fecha
+    Descripción: ¿Para cuándo se necesitan los repuestos?
+
+19. Observaciones Adicionales
+    Tipo: Párrafo
+    Descripción: Cualquier información adicional relevante
+
+20. Autorización del Supervisor
+    Tipo: Respuesta corta
+    Descripción: Nombre del supervisor que autoriza (si aplica)
+
+==============================================
+CONFIGURACIÓN ADICIONAL EN GOOGLE FORMS
+==============================================
+
+Para los 3 formularios:
+
+1. RESPUESTAS:
+   - Activar "Recopilar direcciones de correo electrónico"
+   - Conectar a Google Sheets (se creará automáticamente)
+   - Activar "Permitir que los encuestados editen las respuestas" (opcional)
+   - Crear hojas separadas para cada formulario
+
+2. PRESENTACIÓN:
+   - Mostrar barra de progreso
+   - Orden de las preguntas: Como se muestra
+   - Mensaje de confirmación personalizado por formulario:
+     * Form 1: "✅ Gracias! Su reporte ha sido registrado. Un técnico revisará pronto."
+     * Form 2: "✅ Reporte de trabajo registrado exitosamente. Gracias por su diligencia."
+     * Form 3: "✅ Solicitud recibida. Le notificaremos cuando los repuestos estén disponibles."
+
+3. CONFIGURACIÓN:
+   - Activar "Recopilar respuestas" 
+   - Permitir múltiples envíos
+   - Para fotos: Configurar límite de tamaño (10-20MB por archivo)
+   - Máximo 5 archivos por pregunta
+
+4. PERSONALIZACIÓN:
+   - Color del tema: 
+     * Formulario 1 (Daños): Rojo/Naranja (#f59e0b o #dc2626)
+     * Formulario 2 (Mantenimiento): Azul (#2563eb)
+     * Formulario 3 (Repuestos): Verde (#16a34a)
+   - Imagen de encabezado: Logo de su empresa (opcional)
+
+5. NOTIFICACIONES:
+   - En Google Sheets (respuestas):
+   - Ve a Herramientas → Notificaciones de cambios
+   - Configura para recibir email cuando lleguen nuevas respuestas
+   - Especialmente importante para solicitudes urgentes
+
+==============================================
+DESPUÉS DE CREAR LOS 3 FORMULARIOS
+==============================================
+
+1. Abre cada formulario
+2. Click en "Enviar" (botón arriba a la derecha)
+3. Click en el ícono de enlace 🔗
+4. Click en "Acortar URL" 
+5. Copia las 3 URLs
+6. Pega en app.js en la sección CONFIG:
+   ```javascript
+   DAMAGE_FORM_URL: 'URL_FORMULARIO_1_AQUI',
+   MAINTENANCE_FORM_URL: 'URL_FORMULARIO_2_AQUI',
+   PARTS_FORM_URL: 'URL_FORMULARIO_3_AQUI'
+   ```
+
+==============================================
+ORGANIZACIÓN DE RESPUESTAS EN GOOGLE SHEETS
+==============================================
+
+Sugerencia de estructura:
+
+1. Crear un Google Sheet principal llamado "Sistema Mantenimiento - Respuestas"
+
+2. Dentro tendrás 3 hojas (tabs):
+   - "Reportes de Daños" (del Form 1)
+   - "Mantenimientos Realizados" (del Form 2)
+   - "Solicitudes de Repuestos" (del Form 3)
+
+3. Opcional - Crear una 4ta hoja "Dashboard" con fórmulas para:
+   - Contar solicitudes pendientes
+   - Listar equipos que requieren atención
+   - Calcular costos totales de mantenimiento
+   - Ver solicitudes urgentes
+
+4. Las fotos se guardarán en Google Drive automáticamente
+   - Se creará una carpeta por formulario
+   - En las respuestas verás links a las imágenes
+
+==============================================
+TIPS PARA TRABAJADORES DE CAMPO
+==============================================
+
+Para facilitar el uso de los formularios:
+
+1. **Crear Códigos QR**:
+   - Genera un código QR para cada formulario
+   - Imprime y pega en lugares estratégicos:
+     * Tablero del taller
+     * Oficina de supervisores
+     * En cada equipo (con su referencia)
+
+2. **Accesos Directos en Móviles**:
+   - Los trabajadores pueden guardar los formularios en su pantalla de inicio
+   - En Chrome móvil: Menú → "Agregar a pantalla de inicio"
+
+3. **Fotos desde Móvil**:
+   - Los formularios permiten tomar fotos directamente con la cámara
+   - No necesitan subir fotos existentes
+
+4. **Modo Offline** (limitado):
+   - Google Forms tiene soporte limitado offline
+   - Las respuestas se guardarán cuando haya conexión
+
+==============================================
+
+Título: Solicitud de Repuestos - Sistema Barinas
+
+Descripción:
+Use este formulario para solicitar repuestos para los equipos de la flota.
+
+Campos:
+
+1. Nombre del Equipo *
+   Tipo: Respuesta corta
+   Descripción: Ej: Camión Volqueta 1
+
+2. Referencia/Placa *
+   Tipo: Respuesta corta
+   Descripción: Ej: ABC-123
+
+3. Repuestos Solicitados *
+   Tipo: Párrafo
+   Descripción: Liste los repuestos necesarios con especificaciones
+
+4. Cantidad de Cada Repuesto *
+   Tipo: Párrafo
+   Descripción: Indique cantidad de cada item solicitado
+
+5. Nivel de Urgencia *
+   Tipo: Opción múltiple
+   Opciones:
+   - Baja (puede esperar más de 2 semanas)
+   - Media (necesario en 1-2 semanas)
+   - Alta (necesario esta semana)
+   - Urgente (equipo parado, necesario YA)
+
+6. Motivo de la Solicitud *
+   Tipo: Párrafo
+   Descripción: ¿Por qué se necesitan estos repuestos?
+
+7. ¿El equipo está operativo?
+   Tipo: Opción múltiple
+   Opciones:
+   - Sí, operativo
+   - Parcialmente operativo
+   - No, fuera de servicio
+
+8. Especificaciones Técnicas
+   Tipo: Párrafo
+   Descripción: Números de parte, medidas, marcas específicas, etc.
+
+9. Proveedor Sugerido (si conoce)
+   Tipo: Respuesta corta
+   Descripción: Nombre del proveedor donde conseguir los repuestos
+
+10. Presupuesto Estimado
+    Tipo: Respuesta corta
+    Descripción: Costo aproximado total (si lo conoce)
+
+11. Solicitante *
+    Tipo: Respuesta corta
+    Descripción: Nombre de quien solicita
+
+12. Cargo del Solicitante
+    Tipo: Respuesta corta
+    Descripción: Ej: Supervisor de Mantenimiento, Operador, etc.
+
+13. Fecha de Solicitud *
+    Tipo: Fecha
+    Valor predeterminado: Fecha actual
+
+14. Teléfono de Contacto *
+    Tipo: Respuesta corta
+    Descripción: Para seguimiento de la solicitud
+
+==============================================
+CONFIGURACIÓN ADICIONAL EN GOOGLE FORMS
+==============================================
+
+Para ambos formularios:
+
+1. RESPUESTAS:
+   - Activar "Recopilar direcciones de correo electrónico"
+   - Conectar a Google Sheets (se creará automáticamente)
+   - Activar "Permitir que los encuestados editen las respuestas"
+
+2. PRESENTACIÓN:
+   - Mostrar barra de progreso
+   - Orden de las preguntas: Como se muestra
+   - Mensaje de confirmación: "✅ Gracias! Su reporte/solicitud ha sido registrado correctamente."
+
+3. CONFIGURACIÓN:
+   - Activar "Recopilar respuestas" 
+   - Permitir múltiples envíos (si es necesario)
+
+4. PERSONALIZACIÓN:
+   - Color del tema: Azul (#2563eb) para que coincida con el sistema
+   - Imagen de encabezado: Logo de su empresa (opcional)
+
+==============================================
+DESPUÉS DE CREAR LOS FORMULARIOS
+==============================================
+
+1. Abre cada formulario
+2. Click en "Enviar" (botón arriba a la derecha)
+3. Click en el ícono de enlace 🔗
+4. Click en "Acortar URL" 
+5. Copia la URL corta
+6. Pega en app.js en la sección CONFIG:
+   - MAINTENANCE_FORM_URL → URL del Formulario 1
+   - PARTS_FORM_URL → URL del Formulario 2
+
+==============================================
+VER LAS RESPUESTAS
+==============================================
+
+Las respuestas se guardarán automáticamente en Google Sheets:
+
+1. En el formulario, click en "Respuestas"
+2. Click en el ícono de Google Sheets 📊
+3. Se abrirá la hoja con todas las respuestas
+4. Puedes ver, filtrar y analizar desde ahí
+
+También puedes configurar notificaciones por email:
+1. En Google Sheets (respuestas)
+2. Herramientas → Notificaciones de cambios
+3. Configura para recibir email cuando lleguen nuevas respuestas
+
+==============================================

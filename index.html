@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Mantenimiento - Panel Principal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">🚛 Sistema de Mantenimiento</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Panel Principal</a></li>
+                <li><a href="login.html">🔐 Gestión de Equipos</a></li>
+                <li><a href="kanban.html">📋 Vista Kanban</a></li>
+                <li><a href="#" id="exportExcel">📊 Exportar Excel</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="dashboard-header">
+            <h2>Panel de Control de Equipos</h2>
+            <p class="subtitle">Estado actualizado de la flota</p>
+        </section>
+
+        <!-- Formularios de Acceso Rápido -->
+        <section class="quick-forms-section">
+            <h3 class="section-title">📝 Reportes y Solicitudes</h3>
+            <div class="quick-forms-grid">
+                <a href="#" id="linkDamageForm" class="form-card-link">
+                    <div class="form-icon">⚠️</div>
+                    <h4>Reporte de Daño</h4>
+                    <p>Reportar daño o necesidad de mantenimiento</p>
+                </a>
+                <a href="#" id="linkMaintenanceForm" class="form-card-link">
+                    <div class="form-icon">🔧</div>
+                    <h4>Mantenimiento Realizado</h4>
+                    <p>Registrar trabajo de mantenimiento completado</p>
+                </a>
+                <a href="#" id="linkPartsForm" class="form-card-link">
+                    <div class="form-icon">📦</div>
+                    <h4>Solicitud de Repuestos</h4>
+                    <p>Solicitar repuestos necesarios</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Filtros -->
+        <section class="filters">
+            <div class="filter-group">
+                <label for="filterStatus">Filtrar por Estado:</label>
+                <select id="filterStatus">
+                    <option value="all">Todos</option>
+                    <option value="activo">Activo</option>
+                    <option value="inactivo">Inactivo</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="filterMaintenance">Tipo de Mantenimiento:</label>
+                <select id="filterMaintenance">
+                    <option value="all">Todos</option>
+                    <option value="preventivo">Preventivo</option>
+                    <option value="correctivo">Correctivo</option>
+                    <option value="ninguno">Ninguno</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="searchEquipment">Buscar:</label>
+                <input type="text" id="searchEquipment" placeholder="Nombre o referencia...">
+            </div>
+        </section>
+
+        <!-- Tabla de Equipos -->
+        <section class="equipment-table-section">
+            <div class="table-header">
+                <h3>Lista de Equipos</h3>
+                <button class="btn btn-primary" onclick="window.location.href='login.html'">
+                    ➕ Agregar Equipo
+                </button>
+            </div>
+            <div class="table-wrapper">
+                <table class="equipment-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Tipo</th>
+                            <th>Estado</th>
+                            <th>Último Mantenimiento</th>
+                            <th>Próximo Mantenimiento</th>
+                            <th>Horas de Operación</th>
+                            <th>Solicitud Repuestos</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="equipmentTableBody">
+                        <!-- Los datos se cargarán dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Alertas de Mantenimiento -->
+        <section class="alerts-section">
+            <h3>⚠️ Alertas de Mantenimiento</h3>
+            <div id="alertsContainer">
+                <!-- Las alertas se cargarán dinámicamente -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Sistema de Mantenimiento | 
+                <a href="#" id="linkGoogleSheets">📊 Ver Google Sheets</a> | 
+                <a href="kanban.html">📋 Vista Kanban</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

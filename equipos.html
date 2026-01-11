@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Equipos - Sistema de Mantenimiento</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">🚛 Sistema de Mantenimiento</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html">Panel Principal</a></li>
+                <li><a href="equipos.html" class="active">Gestión de Equipos</a></li>
+                <li><a href="kanban.html">📋 Vista Kanban</a></li>
+                <li><a href="#" id="exportExcel">📊 Exportar Excel</a></li>
+                <li id="userInfo" style="margin-left: auto;"></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="page-header">
+            <h2>Gestión de Equipos</h2>
+            <p class="subtitle">Agregar, editar o eliminar equipos de la flota</p>
+        </section>
+
+        <!-- Formulario de Equipo -->
+        <section class="form-section">
+            <div class="form-card">
+                <h3 id="formTitle">Agregar Nuevo Equipo</h3>
+                <form id="equipmentForm">
+                    <input type="hidden" id="equipmentId">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="equipmentName">Nombre del Equipo *</label>
+                            <input type="text" id="equipmentName" required placeholder="Ej: Camión Volqueta 1">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="equipmentReference">Referencia/Placa *</label>
+                            <input type="text" id="equipmentReference" required placeholder="Ej: ABC-123">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="equipmentType">Tipo de Equipo *</label>
+                            <select id="equipmentType" required>
+                                <option value="">Seleccione...</option>
+                                <option value="camion">Camión</option>
+                                <option value="volqueta">Volqueta</option>
+                                <option value="excavadora">Excavadora</option>
+                                <option value="retroexcavadora">Retroexcavadora</option>
+                                <option value="cargador">Cargador</option>
+                                <option value="grua">Grúa</option>
+                                <option value="maquinaria_pesada">Maquinaria Pesada</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="equipmentStatus">Estado *</label>
+                            <select id="equipmentStatus" required>
+                                <option value="activo">Activo</option>
+                                <option value="inactivo">Inactivo</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="odometerType">Tipo de Odómetro *</label>
+                            <select id="odometerType" required>
+                                <option value="km">Kilómetros (km)</option>
+                                <option value="horas">Horas de Servicio</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="odometerValue">Lectura Actual *</label>
+                            <input type="number" id="odometerValue" required min="0" placeholder="0">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="maintenanceType">Tipo de Mantenimiento Requerido *</label>
+                            <select id="maintenanceType" required>
+                                <option value="ninguno">Ninguno</option>
+                                <option value="preventivo">Preventivo</option>
+                                <option value="correctivo">Correctivo</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="operationalStatus">Estado Operativo *</label>
+                            <select id="operationalStatus" required>
+                                <option value="operativo">Operativo</option>
+                                <option value="mantenimiento_programado">Mantenimiento Programado</option>
+                                <option value="requiere_servicio_urgente">Requiere Servicio Urgente</option>
+                                <option value="fuera_de_servicio">Fuera de Servicio</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="partsRequest">Solicitud de Repuestos</label>
+                        <select id="partsRequest">
+                            <option value="no">No</option>
+                            <option value="si">Sí</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="partsDetailsGroup" style="display: none;">
+                        <label for="partsDetails">Detalles de Repuestos Solicitados</label>
+                        <textarea id="partsDetails" rows="3" placeholder="Describa los repuestos necesarios..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="observations">Observaciones</label>
+                        <textarea id="observations" rows="3" placeholder="Notas adicionales sobre el equipo..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastMaintenance">Última Fecha de Mantenimiento</label>
+                        <input type="date" id="lastMaintenance">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nextMaintenance">Próximo Mantenimiento Programado</label>
+                        <input type="date" id="nextMaintenance">
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="submitBtn">💾 Guardar Equipo</button>
+                        <button type="button" class="btn btn-secondary" id="cancelBtn">❌ Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Historial de Mantenimiento -->
+        <section class="maintenance-history-section" id="maintenanceHistorySection" style="display: none;">
+            <div class="form-card">
+                <h3>📜 Historial de Mantenimiento</h3>
+                <p class="subtitle" id="historyEquipmentName">Equipo seleccionado</p>
+                
+                <div class="history-timeline" id="historyTimeline">
+                    <!-- El historial se cargará dinámicamente -->
+                </div>
+                
+                <button class="btn btn-secondary" onclick="closeHistory()">Cerrar Historial</button>
+            </div>
+        </section>
+
+        <!-- Lista de Equipos Existentes -->
+        <section class="equipment-list-section">
+            <h3>Equipos Registrados</h3>
+            <div class="equipment-grid" id="equipmentGrid">
+                <!-- Las tarjetas de equipos se cargarán dinámicamente -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Sistema de Mantenimiento de Flota - Barinas</p>
+        </div>
+    </footer>
+
+    <script src="auth.js"></script>
+    <script src="app.js"></script>
+    <script src="equipos.js"></script>
+</body>
+</html>
