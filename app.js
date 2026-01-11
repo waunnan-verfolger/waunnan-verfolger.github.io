@@ -6,10 +6,10 @@
 // Configuración de Google Sheets (Actualizar con tus propios enlaces)
 const CONFIG = {
     // ID de tu Google Sheet (lo obtienes de la URL)
-    GOOGLE_SHEET_ID: 'TU_GOOGLE_SHEET_ID_AQUI',
+    GOOGLE_SHEET_ID: '1WvbMVjomjO6-dNA2hEtECJ0hcD1bFibpMIBdhQ_M8bg',
     
     // URL de Google Apps Script Web App (después de deployar)
-    APPS_SCRIPT_URL: 'TU_URL_DE_APPS_SCRIPT_AQUI',
+    APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbwNIzIKG4aYuGIJu9L5mEpJX0tn67nxXLtvI9pSvSS9kML9YbYePL9KBoioTHFTnSIM/exec',
     
     // Enlaces de Google Forms (2 formularios)
     DAMAGE_FORM_URL: 'https://forms.gle/oN7ELCcV5zd4yuDt6',
@@ -17,7 +17,7 @@ const CONFIG = {
     PARTS_FORM_URL: '',
     
     // URL de Google Sheets para visualización
-    SHEETS_VIEW_URL: 'TU_URL_DE_GOOGLE_SHEETS'
+    SHEETS_VIEW_URL: 'https://docs.google.com/spreadsheets/d/1WvbMVjomjO6-dNA2hEtECJ0hcD1bFibpMIBdhQ_M8bg/edit'
 };
 
 // Almacenamiento Local (LocalStorage como respaldo)
