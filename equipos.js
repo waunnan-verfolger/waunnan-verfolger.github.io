@@ -81,11 +81,15 @@ function loadEquipmentForEdit(id) {
 function saveEquipment() {
     try {
         // Validar que equipmentManager esté disponible
-        if (typeof equipmentManager === 'undefined') {
+        const manager = window.equipmentManager || equipmentManager;
+        
+        if (typeof manager === 'undefined') {
             alert('❌ Error: Sistema no inicializado correctamente. Por favor, recargue la página.');
             console.error('equipmentManager no está definido');
             return;
         }
+        
+        console.log('Guardando equipo...');
         
         const equipmentData = {
             name: document.getElementById('equipmentName').value,
@@ -103,15 +107,19 @@ function saveEquipment() {
             nextMaintenance: document.getElementById('nextMaintenance').value
         };
         
+        console.log('Datos del equipo:', equipmentData);
+        
         const editId = document.getElementById('equipmentId').value;
         
         if (editId) {
             // Actualizar
-            equipmentManager.updateEquipment(editId, equipmentData);
+            manager.updateEquipment(editId, equipmentData);
+            console.log('Equipo actualizado:', editId);
             alert('✅ Equipo actualizado exitosamente');
         } else {
             // Crear nuevo
-            equipmentManager.addEquipment(equipmentData);
+            manager.addEquipment(equipmentData);
+            console.log('Equipo agregado');
             alert('✅ Equipo agregado exitosamente');
         }
         
@@ -147,14 +155,16 @@ function resetForm() {
 function loadEquipmentList() {
     try {
         const grid = document.getElementById('equipmentGrid');
+        const manager = window.equipmentManager || equipmentManager;
         
-        if (typeof equipmentManager === 'undefined') {
+        if (typeof manager === 'undefined') {
             grid.innerHTML = '<p class="text-center">⚠️ Error: Sistema no inicializado. Por favor, recargue la página.</p>';
             console.error('equipmentManager no está definido en loadEquipmentList');
             return;
         }
         
-        const equipment = equipmentManager.getAllEquipment();
+        const equipment = manager.getAllEquipment();
+        console.log('Equipos cargados:', equipment.length);
         
         if (equipment.length === 0) {
             grid.innerHTML = '<p class="text-center">No hay equipos registrados aún.</p>';

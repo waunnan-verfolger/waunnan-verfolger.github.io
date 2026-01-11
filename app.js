@@ -147,8 +147,16 @@ class EquipmentManager {
     }
 }
 
-// Instancia global del manager
-const equipmentManager = new EquipmentManager();
+// ====================================
+// INICIALIZACIÓN GLOBAL
+// ====================================
+
+// Instancia global del manager (window.equipmentManager para garantizar scope global)
+window.equipmentManager = new EquipmentManager();
+// También mantener referencia directa
+var equipmentManager = window.equipmentManager;
+
+console.log('✅ EquipmentManager inicializado:', equipmentManager);
 
 // ====================================
 // FUNCIONES DE UTILIDAD
