@@ -5,10 +5,10 @@
 
 // Configuración de autenticación
 const AUTH_CONFIG = {
-    // Cambiar a 'google' para usar Google Sign-In, o 'manual' para cuentas manuales
-    authType: 'manual', // 'google' o 'manual'
+    // Tipo de autenticación: solo manual disponible
+    authType: 'manual',
     
-    // Para autenticación manual: usuarios autorizados
+    // Usuarios autorizados
     authorizedUsers: [
         { username: 'admin', password: 'BarinasAdmin2026!', role: 'admin', name: 'Administrador Principal' },
         { username: 'supervisor', password: 'SuperBarinas2026!', role: 'supervisor', name: 'Supervisor de Mantenimiento' },
