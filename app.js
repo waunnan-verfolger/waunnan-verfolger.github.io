@@ -11,10 +11,10 @@ const CONFIG = {
     // URL de Google Apps Script Web App (después de deployar)
     APPS_SCRIPT_URL: 'TU_URL_DE_APPS_SCRIPT_AQUI',
     
-    // Enlaces de Google Forms (3 formularios)
-    DAMAGE_FORM_URL: 'TU_URL_DE_FORMULARIO_DANO',
-    MAINTENANCE_FORM_URL: 'TU_URL_DE_FORMULARIO_MANTENIMIENTO',
-    PARTS_FORM_URL: 'TU_URL_DE_FORMULARIO_REPUESTOS',
+    // Enlaces de Google Forms (2 formularios)
+    DAMAGE_FORM_URL: 'https://forms.gle/oN7ELCcV5zd4yuDt6',
+    MAINTENANCE_FORM_URL: 'https://forms.gle/JBQPFYVCL6EAEJ6C9',
+    PARTS_FORM_URL: '',
     
     // URL de Google Sheets para visualización
     SHEETS_VIEW_URL: 'TU_URL_DE_GOOGLE_SHEETS'
