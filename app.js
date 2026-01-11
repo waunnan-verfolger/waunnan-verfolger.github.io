@@ -372,7 +372,22 @@ if (document.getElementById('equipmentTableBody')) {
                 <tr>
                     <td><strong>${eq.name}</strong></td>
                     <td>${eq.reference}</td>
-                    < críticas (equipos fuera de servicio)
+                    <td>${getTypeText(eq.type)}</td>
+                    <td><span class="badge badge-${getStatusClass(eq.status)}">${getStatusText(eq.status)}</span></td>
+                    <td>${formatDate(eq.lastMaintenance)}</td>
+                    <td>${formatDate(eq.nextMaintenance)}</td>
+                    <td>${eq.odometerValue} ${eq.odometerType}</td>
+                    <td>${eq.partsRequest === 'si' ? '✅ Sí' : '❌ No'}</td>
+                    <td>
+                        <button class="btn btn-sm btn-secondary" onclick="viewEquipmentDetails('${eq.id}')">👁️ Ver</button>
+                    </td>
+                </tr>
+            `;
+            tbody.innerHTML += row;
+        });
+    }
+    
+    // Cargar alertas críticas (equipos fuera de servicio)
     function loadCriticalAlerts() {
         const container = document.getElementById('criticalAlertsContainer');
         const equipment = equipmentManager.getAllEquipment();
