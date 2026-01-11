@@ -79,41 +79,54 @@ function loadEquipmentForEdit(id) {
 
 // Guardar equipo (crear o actualizar)
 function saveEquipment() {
-    const equipmentData = {
-        name: document.getElementById('equipmentName').value,
-        reference: document.getElementById('equipmentReference').value,
-        type: document.getElementById('equipmentType').value,
-        status: document.getElementById('equipmentStatus').value,
-        odometerType: document.getElementById('odometerType').value,
-        odometerValue: parseInt(document.getElementById('odometerValue').value),
-        maintenanceType: document.getElementById('maintenanceType').value,
-        operationalStatus: document.getElementById('operationalStatus').value,
-        partsRequest: document.getElementById('partsRequest').value,
-        partsDetails: document.getElementById('partsDetails').value,
-        observations: document.getElementById('observations').value,
-        lastMaintenance: document.getElementById('lastMaintenance').value,
-        nextMaintenance: document.getElementById('nextMaintenance').value
-    };
-    
-    const editId = document.getElementById('equipmentId').value;
-    
-    if (editId) {
-        // Actualizar
-        equipmentManager.updateEquipment(editId, equipmentData);
-        alert('✅ Equipo actualizado exitosamente');
-    } else {
-        // Crear nuevo
-        equipmentManager.addEquipment(equipmentData);
-        alert('✅ Equipo agregado exitosamente');
+    try {
+        // Validar que equipmentManager esté disponible
+        if (typeof equipmentManager === 'undefined') {
+            alert('❌ Error: Sistema no inicializado correctamente. Por favor, recargue la página.');
+            console.error('equipmentManager no está definido');
+            return;
+        }
+        
+        const equipmentData = {
+            name: document.getElementById('equipmentName').value,
+            reference: document.getElementById('equipmentReference').value,
+            type: document.getElementById('equipmentType').value,
+            status: document.getElementById('equipmentStatus').value,
+            odometerType: document.getElementById('odometerType').value,
+            odometerValue: parseInt(document.getElementById('odometerValue').value) || 0,
+            maintenanceType: document.getElementById('maintenanceType').value,
+            operationalStatus: document.getElementById('operationalStatus').value,
+            partsRequest: document.getElementById('partsRequest').value,
+            partsDetails: document.getElementById('partsDetails').value,
+            observations: document.getElementById('observations').value,
+            lastMaintenance: document.getElementById('lastMaintenance').value,
+            nextMaintenance: document.getElementById('nextMaintenance').value
+        };
+        
+        const editId = document.getElementById('equipmentId').value;
+        
+        if (editId) {
+            // Actualizar
+            equipmentManager.updateEquipment(editId, equipmentData);
+            alert('✅ Equipo actualizado exitosamente');
+        } else {
+            // Crear nuevo
+            equipmentManager.addEquipment(equipmentData);
+            alert('✅ Equipo agregado exitosamente');
+        }
+        
+        resetForm();
+        loadEquipmentList();
+        
+        // Opcional: redirigir al dashboard
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 1000);
+        
+    } catch (error) {
+        console.error('Error al guardar equipo:', error);
+        alert('❌ Error al guardar el equipo: ' + error.message + '. Por favor, intente nuevamente.');
     }
-    
-    resetForm();
-    loadEquipmentList();
-    
-    // Opcional: redirigir al dashboard
-    setTimeout(() => {
-        window.location.href = 'index.html';
-    }, 1000);
 }
 
 // Resetear formulario
@@ -132,20 +145,34 @@ function resetForm() {
 
 // Cargar lista de equipos
 function loadEquipmentList() {
-    const grid = document.getElementById('equipmentGrid');
-    const equipment = equipmentManager.getAllEquipment();
-    
-    if (equipment.length === 0) {
-        grid.innerHTML = '<p class="text-center">No hay equipos registrados aún.</p>';
-        return;
+    try {
+        const grid = document.getElementById('equipmentGrid');
+        
+        if (typeof equipmentManager === 'undefined') {
+            grid.innerHTML = '<p class="text-center">⚠️ Error: Sistema no inicializado. Por favor, recargue la página.</p>';
+            console.error('equipmentManager no está definido en loadEquipmentList');
+            return;
+        }
+        
+        const equipment = equipmentManager.getAllEquipment();
+        
+        if (equipment.length === 0) {
+            grid.innerHTML = '<p class="text-center">No hay equipos registrados aún.</p>';
+            return;
+        }
+        
+        grid.innerHTML = '';
+        
+        equipment.forEach(eq => {
+            const card = createEquipmentCard(eq);
+            grid.innerHTML += card;
+        });
+        
+    } catch (error) {
+        console.error('Error al cargar equipos:', error);
+        const grid = document.getElementById('equipmentGrid');
+        grid.innerHTML = '<p class="text-center">❌ Error al cargar equipos. Por favor, recargue la página.</p>';
     }
-    
-    grid.innerHTML = '';
-    
-    equipment.forEach(eq => {
-        const card = createEquipmentCard(eq);
-        grid.innerHTML += card;
-    });
 }
 
 // Crear tarjeta de equipo
