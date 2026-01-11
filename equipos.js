@@ -3,7 +3,20 @@
 // Archivo: equipos.js
 // ====================================
 
+// Esperar a que equipmentManager esté disponible
+function waitForManager(callback) {
+    if (window.equipmentManager) {
+        callback();
+    } else {
+        setTimeout(() => waitForManager(callback), 100);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
+    waitForManager(initEquipmentPage);
+});
+
+function initEquipmentPage() {
     const form = document.getElementById('equipmentForm');
     const partsRequestSelect = document.getElementById('partsRequest');
     const partsDetailsGroup = document.getElementById('partsDetailsGroup');
@@ -43,11 +56,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Cargar lista de equipos
     loadEquipmentList();
-});
+}
 
 // Cargar equipo para edición
 function loadEquipmentForEdit(id) {
-    const equipment = equipmentManager.getEquipmentById(id);
+    const equipment = window.equipmentManager.getEquipmentById(id);
     if (!equipment) {
         alert('Equipo no encontrado');
         return;
@@ -80,16 +93,16 @@ function loadEquipmentForEdit(id) {
 // Guardar equipo (crear o actualizar)
 function saveEquipment() {
     try {
-        // Validar que equipmentManager esté disponible
-        const manager = window.equipmentManager || equipmentManager;
+        // Usar window.equipmentManager directamente
+        const manager = window.equipmentManager;
         
-        if (typeof manager === 'undefined') {
+        if (!manager) {
             alert('❌ Error: Sistema no inicializado correctamente. Por favor, recargue la página.');
-            console.error('equipmentManager no está definido');
+            console.error('equipmentManager no está disponible en window');
             return;
         }
         
-        console.log('Guardando equipo...');
+        console.log('Guardando equipo con manager:', manager);
         
         const equipmentData = {
             name: document.getElementById('equipmentName').value,
@@ -155,11 +168,11 @@ function resetForm() {
 function loadEquipmentList() {
     try {
         const grid = document.getElementById('equipmentGrid');
-        const manager = window.equipmentManager || equipmentManager;
+        const manager = window.equipmentManager;
         
-        if (typeof manager === 'undefined') {
+        if (!manager) {
             grid.innerHTML = '<p class="text-center">⚠️ Error: Sistema no inicializado. Por favor, recargue la página.</p>';
-            console.error('equipmentManager no está definido en loadEquipmentList');
+            console.error('equipmentManager no está disponible en window');
             return;
         }
         
