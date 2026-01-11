@@ -10,9 +10,11 @@ const AUTH_CONFIG = {
     
     // Para autenticación manual: usuarios autorizados
     authorizedUsers: [
-        { username: 'admin', password: 'admin123', role: 'admin', name: 'Administrador' },
-        { username: 'supervisor', password: 'super123', role: 'supervisor', name: 'Supervisor' }
-        // Agregar más usuarios aquí
+        { username: 'admin', password: 'BarinasAdmin2026!', role: 'admin', name: 'Administrador Principal' },
+        { username: 'supervisor', password: 'SuperBarinas2026!', role: 'supervisor', name: 'Supervisor de Mantenimiento' },
+        { username: 'mecanico', password: 'MecanicoBarinas123', role: 'tecnico', name: 'Técnico Mecánico' }
+        // Agregar más usuarios aquí:
+        // { username: 'usuario', password: 'contraseña', role: 'tecnico', name: 'Nombre Completo' }
     ],
     
     // Para Google Sign-In: emails autorizados
