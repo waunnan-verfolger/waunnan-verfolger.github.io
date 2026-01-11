@@ -207,7 +207,13 @@ function getPartsRequestBadge(hasRequest) {
 // EXPORTAR A EXCEL
 // ====================================
 function exportToExcel() {
-    const equipment = equipmentManager.getAllEquipment();
+    // Verificar que equipmentManager esté disponible
+    if (!window.equipmentManager) {
+        alert('⚠️ El sistema aún se está cargando. Por favor, espere un momento e intente nuevamente.');
+        return;
+    }
+    
+    const equipment = window.equipmentManager.getAllEquipment();
     
     // Crear encabezados
     const headers = [
@@ -333,7 +339,7 @@ document.addEventListener('DOMContentLoaded', function() {
 if (document.getElementById('equipmentTableBody')) {
     // Cargar estadísticas
     function loadStats() {
-        const stats = equipmentManager.getStats();
+        const stats = window.equipmentManager.getStats();
         document.getElementById('activeCount').textContent = stats.active;
         document.getElementById('maintenanceCount').textContent = stats.needsMaintenance;
         document.getElementById('criticalCount').textContent = stats.critical;
@@ -343,7 +349,7 @@ if (document.getElementById('equipmentTableBody')) {
     // Cargar tabla de equipos
     function loadEquipmentTable(filters = {}) {
         const tbody = document.getElementById('equipmentTableBody');
-        let equipment = equipmentManager.getAllEquipment();
+        let equipment = window.equipmentManager.getAllEquipment();
         
         // Aplicar filtros
         if (filters.status && filters.status !== 'all') {
@@ -390,7 +396,7 @@ if (document.getElementById('equipmentTableBody')) {
     // Cargar alertas críticas (equipos fuera de servicio)
     function loadCriticalAlerts() {
         const container = document.getElementById('criticalAlertsContainer');
-        const equipment = equipmentManager.getAllEquipment();
+        const equipment = window.equipmentManager.getAllEquipment();
         
         const criticalAlerts = [];
         
@@ -420,7 +426,7 @@ if (document.getElementById('equipmentTableBody')) {
     // Cargar alertas de mantenimiento
     function loadMaintenanceAlerts() {
         const container = document.getElementById('maintenanceAlertsContainer');
-        const equipment = equipmentManager.getAllEquipment();
+        const equipment = window.equipmentManager.getAllEquipment();
         
         const maintenanceAlerts = [];
         
@@ -534,7 +540,7 @@ if (document.getElementById('equipmentTableBody')) {
 
     // Funciones globales para acciones
     window.viewEquipment = function(id) {
-        const eq = equipmentManager.getEquipmentById(id);
+        const eq = window.equipmentManager.getEquipmentById(id);
         if (eq) {
             alert(`
 Detalles de: ${eq.name}
